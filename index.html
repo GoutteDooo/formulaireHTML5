@@ -1,60 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Formulaire d'Inscription</title>
   </head>
   <body>
-    <form>
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="surName">Prénom</label>
-      <input type="text" name="surName" id="surName" />
-      <br />
-      <label for="age">Âge</label>
-      <input type="number" name="age" id="age" />
-      <br />
-      <label for="sexe">Sexe</label>
-      <input type="list" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
-      <label for="name">Nom</label>
-      <input type="text" name="name" id="name" />
-      <br />
+    <h1>Formulaire d'inscription</h1>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Informations personnelles</legend>
+        <br />
+
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required />
+        <br /><br />
+
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required />
+        <br /><br />
+
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age" min="0" max="120" required />
+        <br /><br />
+
+        <label for="homme">Sexe :</label>
+        <br />
+
+        <input type="radio" id="homme" name="sexe" value="Homme" required />
+        <label for="homme">Homme</label>
+        <br />
+        <input type="radio" id="femme" name="sexe" value="Femme" required />
+        <label for="femme">Femme</label>
+        <br />
+        <input
+          type="radio"
+          id="non-binaire"
+          name="sexe"
+          value="Non-binaire"
+          required
+        />
+        <label for="non-binaire">Non-binaire</label>
+        <br />
+        <input type="radio" id="autre" name="sexe" value="Autre" required />
+        <label for="autre">Autre</label>
+        <input
+          type="text"
+          id="autre-input"
+          name="sexe"
+          placeholder="(précisez si vous le souhaitez)"
+          maxlength="30"
+        />
+        <br /><br />
+
+        <label for="email">Adresse Mail :</label>
+        <input type="email" id="email" name="email" required />
+        <br /><br />
+
+        <label for="adresse">Adresse postale :</label>
+        <input type="text" id="adresse" name="adresse" required />
+        <br /><br />
+
+        <label for="code-postal">Code Postal :</label>
+        <input
+          type="text"
+          id="code-postal"
+          name="code-postal"
+          pattern="[0-9]{5}"
+          maxlength="5"
+          inputmode="numeric"
+          required
+        />
+        <br /><br />
+
+        <label for="ville">Ville :</label>
+        <input type="text" id="ville" name="ville" required />
+        <br /><br />
+
+        <label for="metier">Métier exercé :</label>
+        <input
+          list="metiers-list"
+          id="metier"
+          name="metier"
+          placeholder="(préciser si autre)"
+        />
+        <datalist id="metiers-list">
+          <option value="Développeur web"></option>
+          <option value="DévOps"></option>
+          <option value="Administrateur systèmes et réseaux"></option>
+        </datalist>
+        <br /><br />
+
+        <label for="nationalite">Nationalité :</label>
+        <select id="nationalite" name="nationalite" required>
+          <option value="" disabled selected>
+            Choisissez votre nationalité
+          </option>
+          <option value="Française">Française</option>
+          <option value="Allemande">Allemande</option>
+          <option value="Espagnole">Espagnole</option>
+          <option value="Italienne">Italienne</option>
+          <option value="Autre">Autre (précisez ci-dessous)</option>
+        </select>
+        <br />
+
+        <!-- Champ pour préciser si "Autre" est sélectionné -->
+        <label for="nationalite-autre">
+          <em>Si autre, précisez votre nationalité :</em>
+        </label>
+        <input type="text" id="nationalite-autre" name="nationalite-autre" />
+        <br /><br />
+
+        <label for="date-naissance">Date de naissance :</label>
+        <input
+          type="date"
+          id="date-naissance"
+          name="date-naissance"
+          min="1900-01-01"
+          max="2008-12-31"
+          required
+        />
+        <br /><br />
+
+        <label for="pays-naissance">Pays de naissance :</label>
+        <input type="text" id="pays-naissance" name="pays-naissance" required />
+        <br /><br />
+
+        <label for="numero-securite-sociale"
+          >Numéro de sécurité sociale :</label
+        >
+        <input
+          type="text"
+          id="numero-securite-sociale"
+          name="numero-securite-sociale"
+          pattern="[0-9]{15}"
+          maxlength="15"
+          placeholder="ex : 123456789123456"
+          required
+        />
+        <br /><br />
+
+        <label for="numero-passeport">Numéro du passeport :</label>
+        <input
+          type="text"
+          id="numero-passeport"
+          name="numero-passeport"
+          placeholder="ex : 123456789"
+          required
+        />
+        <br /><br />
+
+        <label for="date-delivrance-passeport"
+          >Date de délivrance du passeport :</label
+        >
+        <input
+          type="date"
+          id="date-delivrance-passeport"
+          name="date-delivrance-passeport"
+          min="1900-01-01"
+          max="2024-10-17"
+          required
+        />
+        <br /><br />
+
+        <label for="date-validite-passeport"
+          >Date de validité du passeport :</label
+        >
+        <input
+          type="date"
+          id="date-validite-passeport"
+          name="date-validite-passeport"
+          min="1900-01-01"
+          max="2100-10-17"
+          required
+        />
+        <br /><br />
+      </fieldset>
+
+      <input type="submit" value="S'inscrire" />
     </form>
   </body>
 </html>
